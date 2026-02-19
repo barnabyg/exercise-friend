@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Habit Companion - Personalized Habit Building Without Guilt</title>
+  <meta name="description" content="Meet your AI habit companion—personalized, intelligent, and built to help you form sustainable habits through conversation, not streaks or points.">
+  <meta property="og:title" content="AI Habit Companion - Your Personalized Habit Partner">
+  <meta property="og:description" content="Meet your AI habit companion—personalized, intelligent, and built to help you form sustainable habits through conversation, not streaks or points.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Sticky Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">AI Habit Companion</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#connect">Connect</a>
+      </nav>
+      <button class="btn btn-small btn-share" id="navShareBtn">Share This Project</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Share Modal -->
+  <div class="share-modal-overlay" id="shareModal">
+    <div class="share-modal">
+      <button class="share-modal-close" id="shareModalClose" aria-label="Close">&times;</button>
+      <h3>Share This Project</h3>
+      <p>Help spread the word about a different approach to habit building.</p>
+      <div class="share-buttons">
+        <a href="#" id="shareLinkedIn" class="btn btn-share-linkedin" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Share on LinkedIn
+        </a>
+        <a href="#" id="shareX" class="btn btn-share-x" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section 1: Hero -->
+    <section class="section hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-headline">Your Habits Don't Need Another Tracker. They Need a Friend.</h1>
+          <p class="hero-sub">Meet the first AI habit companion that adapts to your life, learns your patterns, and helps you build sustainable habits without gamification, guilt, or generic reminders.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="heroShareBtn">Share This Project</button>
+            <a href="#how-it-works" class="btn btn-ghost">See How It Works &darr;</a>
+          </div>
+          <p class="hero-tease">No streaks. No points. Just a companion who gets you.</p>
+          <p class="trust-badge">A Community-First Project by Munish Malik &amp; Barnaby Golden</p>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar-carousel" id="heroCarousel">
+            <div class="avatar-item active" data-avatar="raven">
+              <span class="avatar-emoji">&#x1F426;&#x200D;&#x2B1B;</span>
+              <span class="avatar-name">The Bold Raven</span>
+            </div>
+            <div class="avatar-item" data-avatar="fox">
+              <span class="avatar-emoji">&#x1F98A;</span>
+              <span class="avatar-name">The Focused Fox</span>
+            </div>
+            <div class="avatar-item" data-avatar="bunny">
+              <span class="avatar-emoji">&#x1F430;</span>
+              <span class="avatar-name">The Gentle Bunny</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Problem Space -->
+    <section class="section section-alt" id="problem">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>You're Not Failing at Habits. Your Tools Are Failing You.</h2>
+          <p class="section-intro">You've downloaded the app. You've set the reminder. You've committed to the streak. And then... Tuesday afternoon hits. Your calendar is a mess, your notifications are overwhelming, and the app doesn't care that you had a terrible day. It just wants to know: Did you do it? Yes or no?</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-card animate-in">
+            <div class="problem-icon">&#x1F4C5;</div>
+            <h3>Generic Reminders Don't Work</h3>
+            <p class="problem-example">"8:00 AM: Time to meditate!" (You're in a meeting.)<br>"6:00 PM: Go for a run!" (You're exhausted and it's pouring rain.)</p>
+            <p>Existing apps don't know your context. They just... remind.</p>
+          </div>
+          <div class="problem-card animate-in">
+            <div class="problem-icon">&#x1F525;</div>
+            <h3>Gamification Backfires</h3>
+            <p>Streaks create pressure, not motivation. You skip one day, lose your 47-day streak, and suddenly the app feels like a source of guilt instead of support.</p>
+          </div>
+          <div class="problem-card animate-in">
+            <div class="problem-icon">&#x2611;&#xFE0F;</div>
+            <h3>One-Size-Fits-All Doesn't Fit Anyone</h3>
+            <p>Some people need a cheerleader. Some need a disciplinarian. Most apps give you neither&mdash;just a cold, transactional checkbox.</p>
+          </div>
+          <div class="problem-card animate-in">
+            <div class="problem-icon">&#x1F916;</div>
+            <h3>Habit Apps Don't Learn</h3>
+            <p>You've been using the same app for 6 months. It knows nothing more about you than it did on day one.</p>
+          </div>
+        </div>
+        <p class="section-transition animate-in">There's a better way. One that doesn't rely on guilt, streaks, or generic nudges. One that actually knows you.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Meet Susan -->
+    <section class="section" id="susan">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Meet Susan. She's Brilliant at Work. Terrible at Habits.</h2>
+        </div>
+        <div class="susan-content animate-in">
+          <div class="susan-card">
+            <p>Susan runs projects at a tech company. Color-coded calendars. Deadline mastery. Zero missed meetings.</p>
+            <p>But outside of work? Her gym bag sits unused by the door. Her meditation app has 47 unread notifications. Her friends wonder how someone so organized at work can't seem to stick to a simple morning routine.</p>
+            <p>The truth? Susan doesn't need another system. She needs someone who understands that her Tuesday looks nothing like her Thursday. Someone who knows that "just 10 minutes" actually works better than an ambitious 45-minute plan. Someone who adjusts when life happens.</p>
+            <p class="susan-conclusion"><strong>She needs a companion, not a tracker.</strong></p>
+          </div>
+          <div class="susan-traits">
+            <span class="trait">&#x1F4BC; Project Manager</span>
+            <span class="trait">&#x1F3AF; Organized at Work</span>
+            <span class="trait">&#x1F3CB;&#xFE0F; Gym Bag by the Door</span>
+            <span class="trait">&#x1F9D8; 47 Unread Notifications</span>
+            <span class="trait">&#x2615; Needs Flexible Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: The Solution -->
+    <section class="section section-alt" id="solution">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Introducing Your AI Habit Companion</h2>
+          <p class="section-sub">Not a Tracker. Not a Reminder App. A Companion.</p>
+        </div>
+        <div class="solution-content animate-in">
+          <p class="solution-intro">Imagine having someone who knows your schedule, understands your personality, and genuinely wants to help you build one habit at a time. Not through guilt. Not through streaks. But through conversation, adaptation, and genuine support.</p>
+          <p><strong>That's what your AI Habit Companion does.</strong></p>
+          <p>It starts by getting to know you&mdash;not through forms, but through conversation. It learns whether you respond better to cheerleading or gentle accountability. It understands that your Mondays look different from your Fridays. And it adjusts, every single day, to help you build sustainable habits that actually stick.</p>
+        </div>
+        <div class="solution-avatar-showcase animate-in">
+          <div class="avatar-carousel-large" id="solutionCarousel">
+            <div class="avatar-item-large active" data-avatar="raven">
+              <span class="avatar-emoji-large">&#x1F426;&#x200D;&#x2B1B;</span>
+              <span class="avatar-name-large">The Bold Raven</span>
+            </div>
+            <div class="avatar-item-large" data-avatar="fox">
+              <span class="avatar-emoji-large">&#x1F98A;</span>
+              <span class="avatar-name-large">The Focused Fox</span>
+            </div>
+            <div class="avatar-item-large" data-avatar="bunny">
+              <span class="avatar-emoji-large">&#x1F430;</span>
+              <span class="avatar-name-large">The Gentle Bunny</span>
+            </div>
+          </div>
+        </div>
+        <div class="principles-grid">
+          <div class="principle-card animate-in">
+            <div class="principle-icon">&#x1F3AF;</div>
+            <h3>Personalized to You</h3>
+            <p>Your companion isn't generic. It's built for your personality, your schedule, your life.</p>
+          </div>
+          <div class="principle-card animate-in">
+            <div class="principle-icon">&#x1F9E0;</div>
+            <h3>Learns &amp; Adapts</h3>
+            <p>The longer you use it, the better it knows you. It's not static&mdash;it evolves with you.</p>
+          </div>
+          <div class="principle-card animate-in">
+            <div class="principle-icon">&#x1F49B;</div>
+            <h3>Compassionate, Not Transactional</h3>
+            <p>Bad day? Your companion adjusts. Life event? It understands. It's support, not surveillance.</p>
+          </div>
+          <div class="principle-card animate-in">
+            <div class="principle-icon">&#x1F331;</div>
+            <h3>Focused on One Habit at a Time</h3>
+            <p>No overwhelming lists. Just one habit, done well, until it becomes second nature.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: How It Works -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Your Journey from "I Should" to "I Do"</h2>
+        </div>
+        <div class="journey-timeline">
+          <div class="journey-step animate-in">
+            <div class="step-number">1</div>
+            <div class="step-icon">&#x1F4AC;</div>
+            <h3>It Starts with a Chat, Not a Form</h3>
+            <p>No tedious sign-up forms. Your companion begins by talking to you&mdash;learning about your goals, your schedule, your personality. Voice or text, your choice.</p>
+            <p class="step-detail">In just a few minutes, your AI understands whether you're a morning person, how busy your week is, and what kind of support you need.</p>
+          </div>
+          <div class="journey-step animate-in">
+            <div class="step-number">2</div>
+            <div class="step-icon">&#x1F43E;</div>
+            <h3>Your Companion Chooses You (But You Can Choose Back)</h3>
+            <p>Based on your conversation, your AI suggests a companion personality. The Cheerleader Cat? The Focused Fox? The Gentle Bunny? You can accept the match or customize until it feels right.</p>
+            <p class="step-detail">Your avatar isn't just a mascot&mdash;it's the personality and tone of every interaction you'll have.</p>
+          </div>
+          <div class="journey-step animate-in">
+            <div class="step-number">3</div>
+            <div class="step-icon">&#x1F514;</div>
+            <h3>Your Companion Shows Up at the Right Time</h3>
+            <p>No rigid schedules. Your companion learns when you're actually available and finds the right moment to check in. Lunch break? Just got home? It knows.</p>
+            <p class="step-detail">Voice or text, 2 minutes or 10&mdash;your interactions are as flexible as your life.</p>
+          </div>
+          <div class="journey-step animate-in">
+            <div class="step-number">4</div>
+            <div class="step-icon">&#x1F4C8;</div>
+            <h3>Smooth, Non-Disruptive, Sustainable</h3>
+            <p>Every day, your companion adapts. It learns when you need encouragement, when to back off, and when life gets in the way. It's not about perfection&mdash;it's about progress.</p>
+            <p class="step-detail">The AI asks qualitative questions, not just yes/no. It understands context, not just completion.</p>
+          </div>
+          <div class="journey-step animate-in">
+            <div class="step-number">5</div>
+            <div class="step-icon">&#x1F389;</div>
+            <h3>You've Built the Habit. Now What?</h3>
+            <p>When your AI detects that the habit is sustainable, it celebrates with you. Then, if you're ready, you can explore a new habit&mdash;or even add a second companion for a different area of your life.</p>
+            <p class="step-detail">Multiple companions can co-exist, each focused on one thing you're building.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: What Makes Us Different -->
+    <section class="section section-alt" id="different">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Not Another Habit Tracker</h2>
+        </div>
+        <div class="comparison-table-wrap animate-in">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Traditional Habit Apps</th>
+                <th class="highlight-col">AI Habit Companion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Reminders</strong></td>
+                <td>Fixed times, same every day</td>
+                <td class="highlight-col">Context-aware, adapts to your schedule</td>
+              </tr>
+              <tr>
+                <td><strong>Motivation</strong></td>
+                <td>Streaks and points</td>
+                <td class="highlight-col">Personalized encouragement and understanding</td>
+              </tr>
+              <tr>
+                <td><strong>Intelligence</strong></td>
+                <td>Static, never learns</td>
+                <td class="highlight-col">Learns your patterns, adjusts over time</td>
+              </tr>
+              <tr>
+                <td><strong>Interaction</strong></td>
+                <td>Checkbox, yes/no</td>
+                <td class="highlight-col">Conversation, voice or text</td>
+              </tr>
+              <tr>
+                <td><strong>Personality</strong></td>
+                <td>Generic, one-size-fits-all</td>
+                <td class="highlight-col">Tailored to your needs</td>
+              </tr>
+              <tr>
+                <td><strong>Focus</strong></td>
+                <td>Track everything</td>
+                <td class="highlight-col">One habit at a time, done well</td>
+              </tr>
+              <tr>
+                <td><strong>Approach</strong></td>
+                <td>Gamification and guilt</td>
+                <td class="highlight-col">Compassionate companionship</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="beliefs-grid">
+          <div class="belief-card animate-in">
+            <h3>Instead of Streaks, We Believe in Sustainability</h3>
+            <p>Losing a 100-day streak doesn't mean you've failed. We measure progress differently&mdash;through qualitative improvement, not unbroken chains.</p>
+          </div>
+          <div class="belief-card animate-in">
+            <h3>Instead of Gamification, We Believe in Genuine Support</h3>
+            <p>Points and badges might work for some. But for most, they become another source of pressure. We skip the game mechanics and focus on what actually helps: understanding and adaptation.</p>
+          </div>
+          <div class="belief-card animate-in">
+            <h3>Instead of Generic Reminders, We Believe in Context</h3>
+            <p>A reminder at 8 AM doesn't help if you're in a meeting. We learn when you're actually available and show up then.</p>
+          </div>
+          <div class="belief-card animate-in">
+            <h3>Instead of Tracking Everything, We Believe in Focus</h3>
+            <p>You don't need to build 17 habits at once. One habit, done well, until it's truly yours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Meet Your Companions -->
+    <section class="section" id="companions">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Your Companion, Your Choice</h2>
+          <p class="section-sub">Every avatar has a personality. Which one is yours?</p>
+        </div>
+        <div class="companion-grid">
+          <div class="companion-card animate-in">
+            <div class="companion-avatar">&#x1F431;</div>
+            <h3>The Cheerleader Cat</h3>
+            <p class="companion-personality">Upbeat, encouraging, celebrates every small win</p>
+            <p class="companion-best"><strong>Best for:</strong> You need positivity and celebration. You respond to warmth.</p>
+            <div class="companion-dialogue">
+              <p>"Amazing! You made time for that walk even though today was chaos. That's growth."</p>
+            </div>
+          </div>
+          <div class="companion-card animate-in">
+            <div class="companion-avatar">&#x1F98A;</div>
+            <h3>The Focused Fox</h3>
+            <p class="companion-personality">Direct, no-nonsense, keeps you accountable</p>
+            <p class="companion-best"><strong>Best for:</strong> You need structure and gentle discipline. You respect clarity.</p>
+            <div class="companion-dialogue">
+              <p>"We agreed on 10 minutes today. No excuses&mdash;let's do this."</p>
+            </div>
+          </div>
+          <div class="companion-card animate-in">
+            <div class="companion-avatar">&#x1F430;</div>
+            <h3>The Gentle Bunny</h3>
+            <p class="companion-personality">Compassionate, understanding, adapts to your emotional state</p>
+            <p class="companion-best"><strong>Best for:</strong> You need empathy and flexibility. You respond to kindness.</p>
+            <div class="companion-dialogue">
+              <p>"Today was rough. How about we try just 5 minutes? No pressure."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: The Technology -->
+    <section class="section section-alt" id="technology">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Smart by Design, Not by Accident</h2>
+          <p class="section-sub">Here's what makes your AI companion actually intelligent.</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F4AC;</div>
+            <h3>Conversational Onboarding</h3>
+            <p class="tech-what">No forms. Just a conversation&mdash;voice or text&mdash;that feels natural.</p>
+            <p class="tech-why">You get a companion that knows you from day one, not day 30.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F3AD;</div>
+            <h3>Personality Profiling</h3>
+            <p class="tech-what">Your companion adapts its tone, approach, and personality to match yours.</p>
+            <p class="tech-why">One-size-fits-all doesn't work. Personalization does.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F4C5;</div>
+            <h3>Context-Aware Scheduling</h3>
+            <p class="tech-what">Your companion knows when to show up&mdash;and when not to.</p>
+            <p class="tech-why">Notifications that arrive at the wrong time get ignored. Ours arrive when you're ready.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F9E0;</div>
+            <h3>Adaptive Learning</h3>
+            <p class="tech-what">The longer you use it, the smarter it gets about YOU.</p>
+            <p class="tech-why">This isn't a static app. It evolves with you.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F4CA;</div>
+            <h3>Qualitative Progress Tracking</h3>
+            <p class="tech-what">We measure how you're doing, not just if you did it.</p>
+            <p class="tech-why">Context matters. We care about sustainable habits, not just completion rates.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F91D;</div>
+            <h3>Compassionate Boundaries</h3>
+            <p class="tech-what">Your companion is supportive, but it's not trying to be your therapist.</p>
+            <p class="tech-why">Clear boundaries create trust. You know what to expect.</p>
+          </div>
+          <div class="tech-card animate-in">
+            <div class="tech-icon">&#x1F310;</div>
+            <h3>Multi-Companion Architecture</h3>
+            <p class="tech-what">As you build one habit, you can add another companion for a different area of life.</p>
+            <p class="tech-why">You're not limited to one habit forever&mdash;but you'll never be overwhelmed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: From the Creators -->
+    <section class="section" id="creators">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Why We're Building This</h2>
+        </div>
+        <div class="creators-content animate-in">
+          <div class="creators-note">
+            <p>Hi, we're Munish and Barnaby.</p>
+            <p>We're not a startup chasing funding, and we're not a corporation launching another productivity tool. We're simply two people who have spent years fascinated by AI, human behavior, and the gap between what technology can do and what actually helps people.</p>
+            <p>Over time, we realized something important: lasting change rarely happens alone. The habits that stick are often built with the support of a partner&mdash;someone who understands you, adapts to you, and walks alongside you.</p>
+            <p>We believe technology can play that role, but only if it's designed differently.</p>
+            <p>Not as a rigid tool, but as a supportive partner.<br>
+            Not as something that pushes you, but something that understands you.<br>
+            Not as another system demanding your attention, but something that respects your time.</p>
+            <p>Most existing tools focus on tracking, optimizing, or nudging&mdash;often driven by metrics, engagement, or incentives that don't fully align with the user's personal growth. The experience can feel transactional, impersonal, and ultimately unsustainable.</p>
+            <p>We wanted to create something else. Something that feels personal. Something that adapts to you. Something that feels less like software, and more like a thoughtful presence in your life.</p>
+            <p>We're sharing this openly in the hope that it inspires a different kind of AI experience&mdash;one that is human-centered, respectful, and truly helpful.</p>
+            <p class="creators-sign">Thanks for being here.<br>&mdash; Munish &amp; Barnaby</p>
+          </div>
+          <div class="creators-profiles">
+            <div class="creator-profile">
+              <div class="creator-avatar">M</div>
+              <h3>Munish Malik</h3>
+              <a href="https://www.linkedin.com/in/munishmalik/" class="btn btn-small btn-outline" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+            </div>
+            <div class="creator-profile">
+              <div class="creator-avatar">B</div>
+              <h3>Barnaby Golden</h3>
+              <a href="https://www.linkedin.com/in/barnabygolden/" class="btn btn-small btn-outline" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Connect -->
+    <section class="section section-cta" id="connect">
+      <div class="container">
+        <div class="section-header animate-in">
+          <h2>Be Part of Something Different</h2>
+          <p class="section-sub">We're building this in the open. Join us.</p>
+        </div>
+        <div class="cta-actions animate-in">
+          <button class="btn btn-primary btn-large" id="ctaShareBtn">Share This Project</button>
+          <p class="cta-sub">Help us spread the word about a different approach to habit building.</p>
+        </div>
+        <div class="cta-farewell animate-in">
+          <span class="farewell-avatar">&#x1F431;</span>
+          <p>See you out there!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Munish Malik &amp; Barnaby Golden. Built with care.</p>
+      <div class="footer-links">
+        <a href="#hero">About</a>
+        <a href="#creators">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
