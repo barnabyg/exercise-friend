@@ -548,6 +548,20 @@ button {
   margin-bottom: 16px;
 }
 
+.video-wrap {
+  max-width: 800px;
+  margin: 0 auto 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(44, 62, 80, 0.15);
+}
+
+.onboarding-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .solution-avatar-showcase {
   margin-bottom: 56px;
 }
