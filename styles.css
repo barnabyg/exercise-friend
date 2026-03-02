@@ -642,6 +642,16 @@ button {
   margin-bottom: 12px;
 }
 
+.step-icon-or {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #999;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 4px;
+}
+
 .journey-step h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
