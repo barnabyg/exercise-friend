@@ -894,6 +894,13 @@ thead .highlight-col {
 
 .creator-profile {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creator-profile .btn {
+  margin-top: auto;
 }
 
 .creator-avatar {
